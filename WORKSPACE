@@ -1,9 +1,10 @@
 workspace(name = "linker_warnings")
 
+rules_haskell_rev="8b030adfe17540e19954b191dd1fa0e91173f78b"
 http_archive(
-  name = "io_tweag_rules_haskell",
-  strip_prefix = "rules_haskell-0.5",
-  urls = ["https://github.com/tweag/rules_haskell/archive/v0.5.tar.gz"]
+    name = "io_tweag_rules_haskell",
+    strip_prefix = "rules_haskell-{}".format(rules_haskell_rev),
+    urls = ["https://github.com/tweag/rules_haskell/archive/{}.tar.gz".format(rules_haskell_rev)],
 )
 
 load("@io_tweag_rules_haskell//haskell:repositories.bzl", "haskell_repositories")
