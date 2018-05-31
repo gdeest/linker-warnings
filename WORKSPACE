@@ -51,11 +51,9 @@ filegroup(
   srcs = glob(["bin/*"]),
 )
 
-cc_library(
-  name = "lz4",
-  srcs = glob(["lib/liblz4.so"]),
-  hdrs = glob(["include/lz4*.h"]),
-  strip_include_prefix="include",
+filegroup(
+  name = "lz4_so",
+  srcs = ["lib/liblz4.so"],
 )
   """,
 )
